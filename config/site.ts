@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   title: "Dveloper",
-  description: "We build websites and web applications.",
+  description: "Software / Platforms / ",
   navItems: [
     {
       label: "Home",
@@ -23,5 +23,6 @@ export const siteConfig = {
   links: {
     github: "https://github.com/rafin-rahman",
     twitter: "https://twitter.com/dveloperio",
+    linkedIn: "https://www.linkedin.com/in/moshfiqur-rahman-rafin-31b223161/",
   },
 };

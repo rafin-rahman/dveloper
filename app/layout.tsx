@@ -1,6 +1,5 @@
 import "./globals.css";
-import Providers from "@/app/providers";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
@@ -15,10 +14,14 @@ export default function RootLayout({ children }: ProvidersProps) {
   return (
     <html lang="en">
       <body>
-        <Providers>
-          <ThemeSwitcher />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
-        </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );
