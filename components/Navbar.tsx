@@ -7,10 +7,10 @@ import { ModeToggle } from "@/components/ThemeSwitcher";
 import Image from "next/image";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
+  { name: "Home", href: "/", current: true },
   { name: "Projects", href: "#", current: false },
   { name: "About", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Contact", href: "contact", current: false },
 ];
 
 function classNames(...classes: any[]) {
@@ -39,18 +39,22 @@ export default function Example() {
               </div>
               <div className="flex flex-1 items-center justify-center  sm:justify-start sm:items-center">
                 <div className="flex flex-shrink-0 items-center">
-                  <Image
-                    src={SEO.logo_light}
-                    alt="Logo"
-                    width={50}
-                    height={50}
-                  />
+                  <a href={"/"}>
+                    <Image
+                      src={SEO.logo_light}
+                      alt="Logo"
+                      width={50}
+                      height={50}
+                    />
+                  </a>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
                       <div key={item.name}>
-                        <Button variant={"outline"}>{item.name}</Button>
+                        <Button variant={"outline"}>
+                          <a href={item.href}>{item.name}</a>
+                        </Button>
                       </div>
                       // <a
                       //   key={item.name}

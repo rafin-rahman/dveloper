@@ -1,6 +1,8 @@
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
+import NavBar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: siteConfig.title,
@@ -20,7 +22,9 @@ export default function RootLayout({ children }: ProvidersProps) {
           enableSystem
           disableTransitionOnChange
         >
+          <NavBar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
