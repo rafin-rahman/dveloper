@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ThemeSwitcher";
+import Image from "next/image";
 
 const navigation = [
   { name: "Home", href: "#", current: true },
@@ -37,10 +38,11 @@ export default function Example() {
               </div>
               <div className="flex flex-1 items-center justify-center  sm:justify-start sm:items-center">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="h-12 w-auto"
+                  <Image
                     src={SEO.logo_light}
                     alt="Logo"
+                    width={50}
+                    height={50}
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
