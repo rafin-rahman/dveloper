@@ -5,15 +5,34 @@ export default function Hero() {
     { name: 3, text: "Reports" },
     { name: 4, text: "Websites" },
   ];
+
+  const text = "Tailored software for your business";
+
   return (
     <div className={"container px-10  pt-20 mx-auto text-center"}>
-      <h1 className={"text-4xl font-bold  uppercase tracking-widest"}>
-        Tailored software for your business
-      </h1>
-      <p className={"tracking-widest"}>
-        We build using the latest technologies to ensure your business is
-        future-proofed
-      </p>
+      <div className={"outline outline-1 p-2 border-b-2 border-black"}>
+        <h1 className="text-4xl font-bold uppercase tracking-widest">
+          {
+            // @ts-ignore
+            [...text].map((letter, index) =>
+              letter === " " ? (
+                " "
+              ) : (
+                <span
+                  key={index}
+                  className="inline-block transform transition-all duration-500 hover:-translate-y-3"
+                >
+                  {letter}
+                </span>
+              )
+            )
+          }
+        </h1>
+        <p className={"tracking-widest"}>
+          We build using the latest technologies to ensure your business is
+          future-proofed
+        </p>
+      </div>
       <div className="flex flex-wrap">
         {images.map((image, index) => (
           <div

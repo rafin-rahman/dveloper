@@ -18,6 +18,7 @@ export const socials = {
   linkedin: "",
   youtube: "",
   tiktok: "",
+  github: "https://github.com/rafin-rahman/",
 };
 
 export const addresses = [
