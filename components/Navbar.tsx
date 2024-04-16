@@ -1,7 +1,7 @@
 "use client";
 import { SEO } from "@/utils/company";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure, Menu } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ThemeSwitcher";
 import Image from "next/image";
@@ -18,6 +18,7 @@ function classNames(...classes: any[]) {
 }
 
 export default function Example() {
+  // @ts-ignore
   return (
     <Disclosure as="nav" className="">
       {({ open }) => (
@@ -81,21 +82,23 @@ export default function Example() {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
-                <div key={item.name}>aa</div>
-                // <Disclosure.Button
-                //   key={item.name}
-                //   as="a"
-                //   href={item.href}
-                //   className={classNames(
-                //     item.current
-                //       ? "bg-gray-900 text-white"
-                //       : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                //     "block rounded-md px-3 py-2 text-base font-medium"
-                //   )}
-                //   aria-current={item.current ? "page" : undefined}
-                // >
-                //   {item.name}
-                // </Disclosure.Button>
+                // <div key={item.name}>{item.name}</div>
+                <Button
+                  key={item.name}
+                  variant={"outline"}
+                  //@ts-ignore
+                  as="a"
+                  href={item.href}
+                  className={classNames(
+                    item.current
+                      ? "bg-gray-900 text-white"
+                      : "text-gray-300 hover:bg-gray-700 hover:text-white ",
+                    "block rounded-md px-3 py-2 text-base font-medium hover:underline hover:underline-offset-4 decoration-blue-300 decoration-2 "
+                  )}
+                  aria-current={item.current ? "page" : undefined}
+                >
+                  {item.name}
+                </Button>
               ))}
             </div>
           </Disclosure.Panel>

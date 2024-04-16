@@ -26,7 +26,7 @@ export default function Hero() {
                 alt={`hero${image.text}`}
                 className={"w-full  rounded"}
               />
-              <p>{image.text}</p>
+              <p className={"pt-2 tracking-wide"}>{image.text}</p>
             </div>
           </div>
         ))}
